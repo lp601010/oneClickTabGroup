@@ -10,7 +10,7 @@ Create tab groups based on second-level domains with one click, automatically na
 
 - **Group tabs by domain**
 - **Expand all groups**
-- **Expand specific group**
+- **Toggle specific group**
 - **Clear all groups**
 
 ## Usage
@@ -19,7 +19,7 @@ Create tab groups based on second-level domains with one click, automatically na
 2. Click the following buttons to manage tab groups or use the shortcut **tab** to select buttons:
    - **Group tabs by domain**: Group tabs by domain.
    - **Expand all groups**: Expand all tab groups.
-   - **Expand specific group**: Enter the group name to expand a specific group.
+   - **Toggle specific group**: Enter the group name to expand a specific group.
    - **Clear all groups**: Clear all tab groups.
 
 Tip：Manage your browser shortcuts from [here](chrome://extensions/shortcuts)
