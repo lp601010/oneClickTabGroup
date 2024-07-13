@@ -3,10 +3,11 @@ body {
   align-items: center;
   justify-content: center; /* 垂直居中 */
   flex-direction: column;
-  width: 12rem;
+  width: 15rem;
   height: auto;
+  background: linear-gradient(to bottom, #899848, #dfe4d0); /* 渐变的浅背景色 */
 }
-          
+
 button {
   margin: 1em;
   white-space: nowrap;
