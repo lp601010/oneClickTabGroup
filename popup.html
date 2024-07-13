@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="./popup.css" />
   </head>
   <body>
-    <button id="group_tabs">Group Tabs</button>
-    <button id="toggle_group">Toggle groups</button>
+    <button id="group_tabs" autofocus>Group Tabs</button>
+    <button id="toggle_all_groups">Toggle all groups</button>
+    
+    <button id="expand_group">Expand specific group</button>
+    <input type="text" id="group_name_input" style="display: none" placeholder="Enter group name" list="group_names" />
+    <datalist id="group_names"></datalist>
+    
     <button id="clear_group">Clear groups</button>
 
     <script src="./popup.js" type="module"></script>

@@ -3,9 +3,11 @@ body {
   align-items: center;
   flex-direction: column;
   width: 10rem;
+  height: auto;;
 }
 
 
 button {
   margin: 1em;
+  white-space: nowrap;
 }
