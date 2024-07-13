@@ -12,7 +12,7 @@
     "message": "すべてのグループを展開"
   },
   "expandSpecificGroup": {
-    "message": "特定のグループを展開"
+    "message": "特定のグループ表示を切り替え"
   },
   "clearAllGroups": {
     "message": "すべてのグループをクリア"

@@ -12,7 +12,7 @@
     "message": "Expand all groups"
   },
   "expandSpecificGroup": {
-    "message": "Expand specific group"
+    "message": "Toggle specific group"
   },
   "clearAllGroups": {
     "message": "Clear all groups"
