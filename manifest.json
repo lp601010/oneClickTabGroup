@@ -1,0 +1,12 @@
+{
+  "name": "One-key tab groups",
+  "description": "manage browser tab groups with one key",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["storage", "tabs", "tabGroups"],
+  "host_permissions": ["<all_urls>"]
+}
