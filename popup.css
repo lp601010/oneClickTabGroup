@@ -1,13 +1,42 @@
 body {
   display: flex;
   align-items: center;
+  justify-content: center; /* 垂直居中 */
   flex-direction: column;
-  width: 10rem;
-  height: auto;;
+  width: 12rem;
+  height: auto;
 }
-
-
+          
 button {
   margin: 1em;
   white-space: nowrap;
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0 14px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #fff;
+}
+
+button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+button:focus {
+  background-color: #fff;
 }

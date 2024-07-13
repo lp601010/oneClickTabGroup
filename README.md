@@ -22,6 +22,8 @@ Create tab groups based on second-level domains with one click, automatically na
    - **Expand specific group**: Enter the group name to expand a specific group.
    - **Clear all groups**: Clear all tab groups.
 
+Tip：Manage your browser shortcuts from [here](chrome://extensions/shortcuts)
+
 ## File Structure
 
 - `_locales`: Localization files.

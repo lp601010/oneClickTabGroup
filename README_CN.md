@@ -22,9 +22,11 @@
    - **展开特定组**: 输入组名以展开特定组。
    - **清除所有组**: 清除所有标签组。
 
+Tip：从 [这里](chrome://extensions/shortcuts) 管理您的浏览器快捷键
+
 ## 文件结构
 
-- `_locales: 本地化文件。
+- `\_locales: 本地化文件。
 - `popup.js`: 扩展的主要逻辑文件。
 - `popup.html`: 扩展的用户界面文件。
 - `popup.css`: 扩展的样式文件。
