@@ -1,0 +1,23 @@
+{
+  "appName": {
+    "message": "ワンクリックタブグループ"
+  },
+  "appDescription": {
+    "message": "ワンクリックでブラウザのタブグループを管理"
+  },
+  "groupTabs": {
+    "message": "ドメインごとにタブをグループ化"
+  },
+  "expandAllGroups": {
+    "message": "すべてのグループを展開"
+  },
+  "expandSpecificGroup": {
+    "message": "特定のグループを展開"
+  },
+  "clearAllGroups": {
+    "message": "すべてのグループをクリア"
+  },
+  "enterGroupName": {
+    "message": "グループ名を入力"
+  }
+}

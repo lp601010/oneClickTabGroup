@@ -1,0 +1,23 @@
+{
+  "appName": {
+    "message": "One-click Tab Group"
+  },
+  "appDescription": {
+    "message": "Manage browser tab groups with one click"
+  },
+  "groupTabs": {
+    "message": "Group tabs by domain"
+  },
+  "expandAllGroups": {
+    "message": "Expand all groups"
+  },
+  "expandSpecificGroup": {
+    "message": "Expand specific group"
+  },
+  "clearAllGroups": {
+    "message": "Clear all groups"
+  },
+  "enterGroupName": {
+    "message": "Enter group name"
+  }
+}

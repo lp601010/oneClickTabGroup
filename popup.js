@@ -1,12 +1,20 @@
 const tabs = await chrome.tabs.query({});
 let isCollapsed = true;
 
-const group_button = document.getElementById("group_tabs");
-const clear_group_button = document.getElementById("clear_group");
-const toggle_all_groups_button = document.getElementById("toggle_all_groups");
-const expand_group_button = document.getElementById("expand_group");
-const group_name_input = document.getElementById("group_name_input");
-const group_names_datalist = document.getElementById("group_names");
+const groupButton = document.getElementById("group_tabs");
+const clearGroupButton = document.getElementById("clear_group");
+const toggleAllGroupsButton = document.getElementById("expand_all_groups");
+const expandGroupButton = document.getElementById("expand_group");
+const groupNameInput = document.getElementById("group_name_input");
+const groupNamesDatalist = document.getElementById("group_names");
+
+console.log("popup.js loaded");
+console.log(chrome.i18n.getMessage("groupTabs"));
+groupButton.textContent = chrome.i18n.getMessage("groupTabs");
+toggleAllGroupsButton.textContent = chrome.i18n.getMessage("expandAllGroups");
+expandGroupButton.textContent = chrome.i18n.getMessage("expandSpecificGroup");
+groupNameInput.placeholder = chrome.i18n.getMessage("enterGroupName");
+clearGroupButton.textContent = chrome.i18n.getMessage("clearAllGroups");
 
 document.addEventListener("keydown", (event) => {
   const focusableElements = document.querySelectorAll("button, input");
@@ -29,7 +37,7 @@ function getSecondLevelDomain(url) {
   return domain;
 }
 
-group_button.addEventListener("click", async () => {
+groupButton.addEventListener("click", async () => {
   const tabGroups = {};
   const singleTabs = [];
   tabs.forEach((tab) => {
@@ -53,9 +61,10 @@ group_button.addEventListener("click", async () => {
   for (const tabId of singleTabs) {
     await chrome.tabs.move(tabId, { index: index++ });
   }
+  window.close();
 });
 
-toggle_all_groups_button.addEventListener("click", async () => {
+toggleAllGroupsButton.addEventListener("click", async () => {
   const tabIds = tabs.map(({ id }) => id);
   const groups = await chrome.tabGroups.query({});
 
@@ -65,36 +74,43 @@ toggle_all_groups_button.addEventListener("click", async () => {
       await chrome.tabGroups.update(group.id, { collapsed: isCollapsed });
     });
   }
+  window.close();
 });
 
-clear_group_button.addEventListener("click", async () => {
+clearGroupButton.addEventListener("click", async () => {
   const tabIds = tabs.map(({ id }) => id);
   if (tabIds.length) {
     await chrome.tabs.ungroup(tabIds);
   }
+  window.close();
 });
 
-expand_group_button.addEventListener("click", async () => {
-  expand_group_button.style.display = "none";
-  group_name_input.style.display = "block";
-  group_name_input.focus();
+expandGroupButton.addEventListener("click", async () => {
+  expandGroupButton.style.display = "none";
+  groupNameInput.style.display = "block";
+  groupNameInput.focus();
 
   const groups = await chrome.tabGroups.query({});
-  group_names_datalist.innerHTML = "";
+  groupNamesDatalist.innerHTML = "";
   groups.forEach((group) => {
     const option = document.createElement("option");
     option.value = group.title;
-    group_names_datalist.appendChild(option);
+    groupNamesDatalist.appendChild(option);
   });
 
-  group_name_input.addEventListener("change", async () => {
-    const groupName = group_name_input.value;
+  groupNameInput.addEventListener("change", async () => {
+    const groupName = groupNameInput.value;
     const group = groups.find((g) => g.title === groupName);
     if (group) {
       await chrome.tabGroups.update(group.id, { collapsed: !group.collapsed });
     }
-    group_name_input.style.display = "none";
-    group_name_input.value = "";
-    expand_group_button.style.display = "block";
+    groupNameInput.style.display = "none";
+    groupNameInput.value = "";
+    expandGroupButton.style.display = "block";
+    window.close();
   });
+});
+
+document.addEventListener("blur", () => {
+  window.close();
 });

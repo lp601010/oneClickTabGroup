@@ -1,0 +1,23 @@
+{
+  "appName": {
+    "message": "一键Tab Group"
+  },
+  "appDescription": {
+    "message": "用一键管理浏览器标签组"
+  },
+  "groupTabs": {
+    "message": "为同域名Tab分组"
+  },
+  "expandAllGroups": {
+    "message": "展开所有组"
+  },
+  "expandSpecificGroup": {
+    "message": "展开特定组"
+  },
+  "clearAllGroups": {
+    "message": "清除所有组"
+  },
+  "enterGroupName": {
+    "message": "输入组名"
+  }
+}
