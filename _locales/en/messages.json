@@ -3,7 +3,7 @@
     "message": "One-click Tab Group"
   },
   "appDescription": {
-    "message": "Manage browser tab groups with one click"
+    "message": "Manage browser tabs with one click and automatically group them according to domain names. The default shortcut key is Ctrl+Shift+1."
   },
   "groupTabs": {
     "message": "Group tabs by domain"
