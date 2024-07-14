@@ -48,4 +48,4 @@ Contributions and issues are welcome. Please submit pull requests or report issu
 
 ## License
 
-[MIT](https://opensource.org/license/mit/)
+[MIT](./LICENCE)
