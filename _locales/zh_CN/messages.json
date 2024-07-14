@@ -6,18 +6,18 @@
     "message": "用一键管理浏览器标签组"
   },
   "groupTabs": {
-    "message": "为同域名Tab分组"
+    "message": "一键分组"
   },
   "expandAllGroups": {
-    "message": "展开所有组"
+    "message": "折叠/展开所有组"
   },
-  "expandSpecificGroup": {
-    "message": "折叠/展开特定组"
+  "enterSpecificGroup": {
+    "message": "进入指定组"
   },
   "clearAllGroups": {
     "message": "清除所有组"
   },
-  "enterGroupName": {
+  "enterGroupName": { 
     "message": "输入组名"
   }
 }

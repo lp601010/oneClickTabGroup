@@ -6,13 +6,13 @@
     "message": "ワンクリックでブラウザのタブグループを管理"
   },
   "groupTabs": {
-    "message": "ドメインごとにタブをグループ化"
+    "message": "タブをグループ化"
   },
   "expandAllGroups": {
-    "message": "すべてのグループを展開"
+    "message": "すべてのグループ表示をを切り替え"
   },
-  "expandSpecificGroup": {
-    "message": "特定のグループ表示を切り替え"
+  "enterSpecificGroup": {
+    "message": "特定のグループに入る"
   },
   "clearAllGroups": {
     "message": "すべてのグループをクリア"

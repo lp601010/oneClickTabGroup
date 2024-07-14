@@ -3,16 +3,16 @@ let isCollapsed = true;
 
 const groupButton = document.getElementById("group_tabs");
 const clearGroupButton = document.getElementById("clear_group");
-const toggleAllGroupsButton = document.getElementById("expand_all_groups");
-const expandGroupButton = document.getElementById("expand_group");
+const expandAllGroupsButton = document.getElementById("expand_all_groups");
+const enterGroupButton = document.getElementById("expand_group");
 const groupNameInput = document.getElementById("group_name_input");
 const groupNamesDatalist = document.getElementById("group_names");
 
 console.log("popup.js loaded");
 console.log(chrome.i18n.getMessage("groupTabs"));
 groupButton.textContent = chrome.i18n.getMessage("groupTabs");
-toggleAllGroupsButton.textContent = chrome.i18n.getMessage("expandAllGroups");
-expandGroupButton.textContent = chrome.i18n.getMessage("expandSpecificGroup");
+expandAllGroupsButton.textContent = chrome.i18n.getMessage("expandAllGroups");
+enterGroupButton.textContent = chrome.i18n.getMessage("enterSpecificGroup");
 groupNameInput.placeholder = chrome.i18n.getMessage("enterGroupName");
 clearGroupButton.textContent = chrome.i18n.getMessage("clearAllGroups");
 
@@ -61,10 +61,9 @@ groupButton.addEventListener("click", async () => {
   for (const tabId of singleTabs) {
     await chrome.tabs.move(tabId, { index: index++ });
   }
-  window.close();
 });
 
-toggleAllGroupsButton.addEventListener("click", async () => {
+expandAllGroupsButton.addEventListener("click", async () => {
   const tabIds = tabs.map(({ id }) => id);
   const groups = await chrome.tabGroups.query({});
 
@@ -74,7 +73,6 @@ toggleAllGroupsButton.addEventListener("click", async () => {
       await chrome.tabGroups.update(group.id, { collapsed: isCollapsed });
     });
   }
-  window.close();
 });
 
 clearGroupButton.addEventListener("click", async () => {
@@ -82,13 +80,11 @@ clearGroupButton.addEventListener("click", async () => {
   if (tabIds.length) {
     await chrome.tabs.ungroup(tabIds);
   }
-  window.close();
 });
 
-expandGroupButton.addEventListener("click", async () => {
-  expandGroupButton.style.display = "none";
+enterGroupButton.addEventListener("click", async () => {
+  enterGroupButton.style.display = "none";
   groupNameInput.style.display = "block";
-  groupNameInput.focus();
 
   const groups = await chrome.tabGroups.query({});
   groupNamesDatalist.innerHTML = "";
@@ -98,16 +94,20 @@ expandGroupButton.addEventListener("click", async () => {
     groupNamesDatalist.appendChild(option);
   });
 
+  groupNameInput.focus();
+  
   groupNameInput.addEventListener("change", async () => {
     const groupName = groupNameInput.value;
     const group = groups.find((g) => g.title === groupName);
     if (group) {
-      await chrome.tabGroups.update(group.id, { collapsed: !group.collapsed });
+      const tabsInGroup = await chrome.tabs.query({ groupId: group.id });
+      if (tabsInGroup.length > 0) {
+        await chrome.tabs.update(tabsInGroup[0].id, { active: true });
+      }
     }
     groupNameInput.style.display = "none";
     groupNameInput.value = "";
-    expandGroupButton.style.display = "block";
-    window.close();
+    enterGroupButton.style.display = "block";
   });
 });
 

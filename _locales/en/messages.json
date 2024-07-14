@@ -9,10 +9,10 @@
     "message": "Group tabs by domain"
   },
   "expandAllGroups": {
-    "message": "Expand all groups"
+    "message": "Toggle all groups"
   },
-  "expandSpecificGroup": {
-    "message": "Toggle specific group"
+  "enterSpecificGroup": {
+    "message": "Enter a specific group"
   },
   "clearAllGroups": {
     "message": "Clear all groups"
