@@ -15,7 +15,7 @@
     "message": "进入指定组"
   },
   "clearAllGroups": {
-    "message": "清除所有组"
+    "message": "取消所有分组"
   },
   "enterGroupName": { 
     "message": "输入组名"

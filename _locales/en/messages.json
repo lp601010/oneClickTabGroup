@@ -15,7 +15,7 @@
     "message": "Enter a specific group"
   },
   "clearAllGroups": {
-    "message": "Clear all groups"
+    "message": "Ungroup all tabs"
   },
   "enterGroupName": {
     "message": "Enter group name"
