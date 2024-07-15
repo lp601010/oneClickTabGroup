@@ -22,7 +22,7 @@
    - **展开特定组**: 输入组名以展开特定组。
    - **清除所有组**: 清除所有标签组。
 
-Tip：从 [这里](chrome://extensions/shortcuts) 管理您的浏览器快捷键
+Tip：从 chrome://extensions/shortcuts 管理您的浏览器快捷键
 
 ## 文件结构
 
